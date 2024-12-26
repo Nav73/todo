@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 require("dotenv").config()
+const path = require('path');
 const { name } = require("ejs");
 
 const _ = require("lodash")
@@ -14,7 +15,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
