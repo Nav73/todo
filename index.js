@@ -9,7 +9,7 @@ const _ = require("lodash")
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 
